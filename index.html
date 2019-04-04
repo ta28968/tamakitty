@@ -4,18 +4,17 @@
 <head>
   <meta charset="utf-8">
   <title>TamaKitty</title>
-  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> 
-  <link href="https://fonts.googleapis.com/css?family=Dokdo|Gloria+Hallelujah" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/style.css"></link>
+  <link rel="stylesheet" type="text/css" href=/Users/thomasarnone/Documents/tamagachi/css/style.css></link>
   
-    <title>tamagatchigame</title>
+    <title>TamaKitty</title>
 </head>
 <style>
 body {
-    background-color:rgb(0, 255, 13)
+    background-image: url(backdrop.jpeg);
+    
   }
   </style>
-<body><h1>Tamagotchi Kitty</h1>
+<body><h1>Tamagot-Kitty</h1>
         <div id="actionBar">
                 <div id='options'>
                         <div class="kitty"></div>
@@ -36,29 +35,31 @@ body {
 
         <div id='time'></div>
         <br>
-        <div id='age'></div><div>Age</div>
+        <div id='age'></div><div><h1>Age</h1></div>
         <br>
-        <div id='hunger'></div><div>Hunger</div>
-        <div id='health'></div><div>Health</div>
-        <div id='happiness'></div><div>Happiness</div>
+        <div><h2>Hunger</h2></div>
+        <progress  id='hunger' value="0" max="20"></progress>
+        <div><h2>Health</h2></div>
+        <progress id='health' value="0" max="20"></progress>
+        <div><h2>Happiness</h2></div>
+        <progress id='happiness' value="0" max="20"></progress>
+        
         <br>
         <form>
-          <input type="text" placeholder="enter your pet name" id="input-box"/>
+          <input type="text" value="enter your pet name" name="name" id="input-box"/>
           <input type="submit"></button>
       </form>
          <br>
         <button id='timer' class='start'>start</button>
         <button id='timer' class='stop'>stop</button>
+
+        <div> </div>
     <br>
     <div id="gameContainer"></div>
     <br>
 
-    <div 
-        src=https://media2.giphy.com/media/xJjs8eGVbjNYY/200w.webp?cid=790b76115ca3991456715737550944a6>
-    </div>
-    <div class='playingPic' id='img src=https://media2.giphy.com/media/tBxyh2hbwMiqc/giphy.webp?cid=790b76115ca3993e3936305559045117'>
-      
-        
+    <div>
+        <img id=kitty src="tamacat.jpeg" width="200" height="200">   
     </div>
 
     

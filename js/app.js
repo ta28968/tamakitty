@@ -4,9 +4,10 @@ let timePassing;
 let seconds = 0;
 let minutes = 0;
 let age = 0;
-let hunger = 0;
+let feed = 0;
 let play = 0;
-let health = 0;
+let sleep = 0;
+let name;
 const secondsGoUp = () => {
     seconds++;
     $('#time').text(seconds)
@@ -14,10 +15,33 @@ const secondsGoUp = () => {
     if(seconds % 60 === 0){
         minutes++;
         $('.minutes').text(minutes, age);
+      } 
+    if(seconds % 2 === 0){
+      feed++;
+      $("#hunger").attr("value", feed);
+      console.log(feed)
     }
-  
-  
+    if(seconds % 2 === 0){
+      play++;
+      $("#happiness").attr("value", play);
+      console.log(play)
+    }
+    if(seconds % 2 === 0){
+      sleep++;
+      $("#health").attr("value", sleep);
+      console.log(sleep)
+    }
 }
+
+
+$('form').submit(function(e){
+  e.preventDefault();
+name = $('form').find('input[name="name"]').val();
+  console.log(name);
+});
+
+
+
 $('.start').on('click',function(){
     timePassing = setInterval(secondsGoUp, 1000);
 })
@@ -28,22 +52,13 @@ secondsGoUp();
 
 
 
-
-
- 
- 
-  
-//  const pet = new Kitty()
-//  let increment1 = 0;
-//  let increment2 = 0;
-//  let increment3 = 0;
-
   //When sleep btn pushed img and health bar increases if health bar hits 0 you die and img
  $('#sleep').on('click', function(e){
-     increment1 += 10;
-    $('#health').val(increment1);
-    //console.log($('#healthBar').val());
-
+     if (sleep > 10){
+       sleep -= 2;
+     } else{
+       console.log("don't need sleep")
+     }  
    
  })
         
@@ -51,9 +66,15 @@ secondsGoUp();
 
   //When feed btn pushed img and hunger bar increases if health bar hits 0 you die and img
 $('#feed').on('click', function(e){
-    increment2 += 10;
-    $('#hunger').val(increment2);
-    //console.log($('#hungerBar').val());
+  if (feed > 10){
+    feed -= 2;
+  $('#hunger').val(feed)
+  }else {
+    console.log("Give me food")
+  }
+    
+    //$('#hunger').val();
+    console.log($('#hunger').val());
     //$('#eatingPic').on()
 })
 
@@ -61,8 +82,14 @@ $('#feed').on('click', function(e){
   //When play btn pushed img and happiness bar increases if health bar hits 0 you die and img 
 
 $('#play').on('click', function(e){
-    increment3 += 10;
-    $('#happiness').val(increment3);
+  if (play > 10){
+    play -= 2;
+  }else{
+    console.log("throw the ball")
+
+  }
+    
+    //$('#happiness').val();
     //console.log($('#happinessBar').val());
     
     
